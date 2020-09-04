@@ -1,0 +1,13 @@
+<h2>Ingredient Show Page</h2>
+
+Name:
+<h3><%= @ingredient.name %></h3>
+
+Recipes That Use This Ingredient:
+<ul>
+<% @ingredient.recipes.each do |rec| %>
+<li><%= link_to(rec.name, recipe_path(rec)) %></li>
+<% end %>
+</ul>
+
+<%= button_to("Edit Ingredient", edit_ingredient_path(@ingredient), method: :get) %>

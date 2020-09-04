@@ -1,0 +1,9 @@
+<h2>Ingredient Index Page</h2>
+
+<ul>
+<% @ingredients.each do |i| %>
+<li><%= link_to(i.name, ingredient_path(i)) %></li>
+<% end %>
+</ul>
+
+<%= button_to("Add Ingredient", new_ingredient_path, method: :get) %>
